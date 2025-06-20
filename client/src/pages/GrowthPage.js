@@ -24,10 +24,11 @@ const moodScale = {
 
 export default function GrowthPage() {
   const [moodData, setMoodData] = useState([]);
+  const API_URL = process.env.REACT_APP_API_URL;
 
   useEffect(() => {
     async function fetchMood() {
-      const data = await fetch('http://localhost:5000/api/user/progress', {
+      const data = await fetch('${API_URL}/user/progress', {
         headers: {
           Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NTRlNzM2Mjk0NzU0NjNjMDIwNzgzNiIsImlhdCI6MTc1MDM5NDc1NiwiZXhwIjoxNzUwNDgxMTU2fQ.lPGGRN3mEZFnnHmXIY9kpECWGLwViO9HxcOcXmGHj-w`
         }
